@@ -6,6 +6,8 @@ class Person {
   }
 }
 
+// toBe is for primitive and toEqual is for refrentail equality
+
 test('objects with the same properties are equal', () => {
   expect({ a: 1, b: 2 }).toEqual({ a: 1, b: 2 });
 });
