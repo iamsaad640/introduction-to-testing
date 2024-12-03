@@ -5,6 +5,14 @@ describe('add', () => {
   it('should add two numbers', () => {
     expect(add(2, 2)).toBe(4);
   });
+
+  it('should parse string to number', () => {
+    expect(add('1', 1)).toBe(2);
+  });
+
+  it('should throw if not a number after parsing', () => {
+    expect(() => add('potato', 1)).toThrow(); // function is in callback
+  });
 }); // TDD approach, first write tests, then write code
 //TDD is best when you know the case, and make it pass
 // but its hard when you don't know about who code will perform or you are debuging or scaling already developed code.
@@ -23,6 +31,10 @@ describe('multiply', () => {
 describe('divide', () => {
   it('divide first by second', () => {
     expect(divide(4, 2)).toBe(2);
+  });
+
+  it('should throw when divideb by zero', () => {
+    expect(() => divide(10, 0)).toThrow();
   });
 });
 
