@@ -25,3 +25,10 @@ describe('divide', () => {
     expect(divide(4, 2)).toBe(2);
   });
 });
+
+// how to handle weired cases like adding 1 with '1' or not giving second argument etc
+// answer to that is
+// 1. fail gracefully (you know, who will do that)
+// 2. if you don't know what to do, just throw an exception
+
+// but this should not ❌tes be an answer, that i don't know about it, let it happen as they are
