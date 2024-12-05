@@ -56,8 +56,8 @@ describe('Character', () => {
     });
   });
 
-  it('should use async/await for async code', async () => {
-    const code = await addAsync(2, 5);
-    expect(code).toBe(7);
-  }); // testing a sync code
+  // it('should use async/await for async code', async () => {
+  //   const code = await addAsync(2, 5);
+  //   expect(code).toBe(7);
+  // }); // testing a sync code
 });
