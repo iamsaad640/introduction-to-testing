@@ -1,9 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { Character } from './character.js';
-import { Person } from './person.js';
 
 describe('Character', () => {
-  const character = new Character('Jhon', 'Deo', 'king');
+  let character;
+  beforeEach(() => {
+    character = new Character('Jhon', 'Deo', 'king');
+  }); // you can do it, but you can just write dump code as previous, but there are usecases where we can do it
+
   it('should create a character with a first name, last name, and role', () => {
     expect(character).toEqual({
       firstName: 'Jhon',
@@ -52,4 +55,9 @@ describe('Character', () => {
       ...character,
     });
   });
+
+  it('should use async/await for async code', async () => {
+    const code = await addAsync(2, 5);
+    expect(code).toBe(7);
+  }); // testing a sync code
 });
