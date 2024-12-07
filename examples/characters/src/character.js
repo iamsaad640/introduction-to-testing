@@ -1,8 +1,8 @@
 import { Person } from './person.js';
-import { rollDice } from './roll-dice.js';
+// import { rollDice } from './roll-dice.js';
 
 export class Character extends Person {
-  constructor(firstName, lastName, role) {
+  constructor(firstName, lastName, role, level, rollDice) {
     super(firstName, lastName);
 
     this.role = role;

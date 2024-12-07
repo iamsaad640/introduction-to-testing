@@ -1,11 +1,8 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { Character } from './character.js';
 
 describe('Character', () => {
-  let character;
-  beforeEach(() => {
-    character = new Character('Jhon', 'Deo', 'king');
-  }); // you can do it, but you can just write dump code as previous, but there are usecases where we can do it
+  beforeEach(() => {}); // you can do it, but you can just write dump code as previous, but there are usecases where we can do it
 
   it('should create a character with a first name, last name, and role', () => {
     expect(character).toEqual({
@@ -54,6 +51,15 @@ describe('Character', () => {
       lastModified: !lastModified,
       ...character,
     });
+  });
+
+  it.only('mock the result', () => {
+    //.only run will run only this test
+    const rollDiceMock = vi.fn(() => 15);
+
+    const character = new Character('Jhon', 'Deo', 'king', 1, rollDiceMock);
+    expect(rollDiceMock).toHaveBeenCalledWith(4, 6);
+    expect(rollDiceMock).toHaveBeenCalledTimes(6);
   });
 
   // it('should use async/await for async code', async () => {
